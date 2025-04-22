@@ -98,10 +98,6 @@ img {
   margin: 0 auto;
 }
 
-.icon {
-  fill: var(--text);
-}
-
 .logo {
   font-family: var(--logo-font);
   font-size: 24px;
@@ -113,9 +109,28 @@ img {
 .main-title {
   font-family: "NAMU", sans-serif;
   font-weight: 500;
-  font-size: 126px;
+  font-size: 133px;
+  line-height: 1.1;
   text-transform: uppercase;
   color: var(--text);
+}
+
+.main-accent {
+  font-size: 126px;
+  position: relative;
+}
+
+.main-accent::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 40px;
+  margin-left: 12px;
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/svg/gradient-arrow.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .secondary-title {
@@ -189,9 +204,27 @@ img {
   text-transform: uppercase;
   color: var(--text);
   text-decoration: none;
+  transition: color 0.5s ease-in-out;
 }
 
 .nav-link::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-image: url("../img/svg/arrow.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: #3b7d4d;
+}
+
+.nav-link:hover.nav-link::after,
+.nav-link:focus.nav-link::after {
+  background-image: url("../img/svg/gradient-arrow.svg");
 }
 
 /* Hero section */
@@ -228,6 +261,25 @@ img {
   text-transform: uppercase;
   text-align: center;
   color: var(--text);
+  transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out,
+    border 0.5s ease-in-out, padding 0.5s ease-in-out;
+}
+
+.details-button:hover,
+.details-button:focus {
+  background-color: #181818;
+  background: var(--gradient);
+  color: var(--page-background);
+  border: none;
+  padding: 8px 22px;
+}
+
+.details-button .icon {
+  transition: fill 0.5s ease-in-out;
+}
+.details-button:hover .icon,
+.details-button:focus .icon {
+  fill: var(--page-background);
 }
 
 /* Traditions section */
@@ -250,7 +302,7 @@ img {
   background: var(--page-background);
   color: var(--text);
   cursor: pointer;
-  padding: 12px 57px 13px 57px;
+  padding: 12px 8px 13px 57px;
   text-align: left;
   border: 2px solid var(--text);
   border-radius: 45px;
@@ -261,8 +313,10 @@ img {
   font-family: "Fixel Display", sans-serif;
   font-weight: 600;
   font-size: 20px;
-  line-height: 143%;
   letter-spacing: 0.01em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .active,
@@ -270,6 +324,32 @@ img {
   background: var(--gradient);
   color: var(--page-background);
   border: none;
+}
+
+.accordion-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid var(--text);
+  background-color: var(--page-background);
+  transition: border 0.5s ease-in-out;
+}
+
+.active,
+.accordion:hover .accordion-icon {
+  border: none;
+}
+
+.button-icon {
+  margin: 0 auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.active .accordion-icon .button-icon {
+  transform: rotate(180deg);
 }
 
 .panel {
@@ -358,6 +438,23 @@ img {
 
 .events-item .sub-title {
   margin-bottom: 16px;
+}
+
+.events-item .sub-title::after {
+  display: inline-block;
+  content: " ";
+  background-image: url(../img/svg/gradient-arrow.svg);
+  background-size: contain;
+  width: 19px;
+  height: 19px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.events-item:hover .sub-title::after,
+.events-item:focus .sub-title::after {
+  background-image: url(../img/svg/green-arrow.svg);
 }
 
 .event-details-list {

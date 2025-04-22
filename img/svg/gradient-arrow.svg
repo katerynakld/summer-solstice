@@ -1,0 +1,15 @@
+<svg width="10" height="10" viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="main-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a4734b"/>       <!-- Pure yellowish tone in bottom-left -->
+      <stop offset="15%" stop-color="#a4734b"/>      <!-- Hold yellow a bit longer -->
+      <stop offset="40%" stop-color="#3b7d4d"/>      <!-- Start green transition -->
+      <stop offset="100%" stop-color="#181818"/>     <!-- End in dark -->
+    </linearGradient>
+  </defs>
+  <path 
+    fill-rule="evenodd" 
+    clip-rule="evenodd" 
+    d="M9.91918 1.56006H9.91923V0.0600586H0.10495L0.10495 1.56006L7.49777 1.56006L0 8.89126L1.07251 9.93994L8.41918 2.75648V9.93994H9.91918V1.56006Z" 
+    fill="url(#main-gradient)" />
+</svg>
